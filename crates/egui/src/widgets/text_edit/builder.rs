@@ -296,6 +296,13 @@ impl<'t> TextEdit<'t> {
         self
     }
 
+    /// See [`EventFilter`] for behavior. Replaces internal defaults.
+    #[inline]
+    pub fn event_filter(mut self, event_filter: EventFilter) -> Self {
+        self.event_filter = event_filter;
+        self
+    }
+
     /// When `true` (default), the cursor will initially be placed at the end of the text.
     ///
     /// When `false`, the cursor will initially be placed at the beginning of the text.
